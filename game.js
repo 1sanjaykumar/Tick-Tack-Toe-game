@@ -25,7 +25,7 @@ box.forEach((box) => {
       i++;
       box.innerHTML = "O";
       flag = true;
-      tern.innerHTML = "Turn for X";
+      tern.innerHTML = "Turn of X";
     }
     if (i == 9) {
       tern.innerHTML = "Draw";
@@ -101,7 +101,7 @@ const resetgame = () => {
   flag = true;
   tern.style.color = "black";
   img.style.display = "none";
-  tern.innerHTML = "Tern of X";
+  tern.innerHTML = "Turn of X";
   enable();
 };
 

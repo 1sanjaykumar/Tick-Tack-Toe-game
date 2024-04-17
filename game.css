@@ -145,10 +145,10 @@
     justify-content: center;
     width: 100%;
     margin-left: 2vw;
-    margin-top: 10vw;
+    margin-top: 15vw;
     display: grid;
-    grid-template-rows: repeat(3, 30vw);
-    grid-template-columns: repeat(3, 30vw);
+    grid-template-rows: repeat(3, 28vw);
+    grid-template-columns: repeat(3, 28vw);
   }
   .box {
     font-size: 20vw;
@@ -168,6 +168,8 @@
   }
   .reset {
     font-size: 8vw;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
   }
 
   .h {
