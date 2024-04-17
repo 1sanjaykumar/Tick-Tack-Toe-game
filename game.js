@@ -5,11 +5,13 @@ let reset = document.querySelector(".reset");
 let tern = document.querySelector(".h");
 
 let img = document.querySelector(".image");
-let flag = true;
 
+let flag = true;
+let i = 0;
 let click = new Audio("click2.mp3");
 let gamesong = new Audio("gamesong.mp3");
 let win = new Audio("winner.mp3");
+let laugh = new Audio("laughing.mp3");
 
 let winpattern = [
   [0, 1, 2],
@@ -26,13 +28,22 @@ box.forEach((box) => {
   box.addEventListener("click", function () {
     gamesong.play();
     if (flag == true) {
+      i++;
       box.innerHTML = "X";
       flag = false;
       tern.innerHTML = "Turn for O";
     } else {
+      i++;
       box.innerHTML = "O";
       flag = true;
       tern.innerHTML = "Turn for X";
+    }
+    if (i == 9) {
+      tern.innerHTML = "Draw";
+      tern.style.color = "red";
+      tern.style.fontWeight = "900";
+      gamesong.pause();
+      laugh.play();
     }
     box.disabled = true;
     click.play();
@@ -52,6 +63,7 @@ let checkwin = () => {
           tern.innerHTML = "X is Winner";
           tern.style.color = "red";
           img.style.display = "block";
+
           win.play();
           gamesong.pause();
           for (let boxs of box) {
@@ -63,6 +75,7 @@ let checkwin = () => {
           gamesong.pause();
           tern.style.color = "red";
           img.style.display = "block";
+
           console.log(tern.innerHTML);
           box.disabled = true;
           for (let boxs of box) {
@@ -78,6 +91,7 @@ const enable = () => {
   for (let boxes of box) {
     boxes.disabled = false;
     boxes.innerText = "";
+    i = 0;
   }
 };
 
