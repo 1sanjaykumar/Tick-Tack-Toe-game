@@ -13,17 +13,6 @@ let gamesong = new Audio("gamesong.mp3");
 let win = new Audio("winner.mp3");
 let laugh = new Audio("laughing.mp3");
 
-let winpattern = [
-  [0, 1, 2],
-  [3, 4, 5],
-  [6, 7, 8],
-  [0, 4, 8],
-  [2, 4, 6],
-  [0, 3, 6],
-  [1, 4, 7],
-  [2, 5, 8],
-];
-
 box.forEach((box) => {
   box.addEventListener("click", function () {
     gamesong.play();
@@ -51,8 +40,20 @@ box.forEach((box) => {
   });
 });
 
+let winpattern = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+];
+
 let checkwin = () => {
   for (pattern of winpattern) {
+    // console.log(pattern[0], pattern[1], pattern[2]);
     let pos1val = box[pattern[0]].innerText;
     let pos2val = box[pattern[1]].innerText;
     let pos3val = box[pattern[2]].innerText;
