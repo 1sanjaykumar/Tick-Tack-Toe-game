@@ -90,7 +90,9 @@
   display: none;
 }
 
-.img1 {
+.img {
+  width: 400px;
+  height: 300px;
   border-radius: 50%;
 }
 
@@ -165,7 +167,9 @@
     font-size: 4vw;
   }
   .img {
-    display: none;
+    width: 200px;
+    height: 200px;
+    margin-left: 70px;
   }
   .reset {
     font-size: 8vw;
